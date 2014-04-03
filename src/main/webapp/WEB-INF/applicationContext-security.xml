@@ -1,0 +1,32 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <http>
+        <intercept-url pattern="/api/**" access="ROLE_ADMIN"/>
+
+        <form-login login-page="/"
+                    username-parameter="login"
+                    password-parameter="password"
+                    default-target-url="/api/controls"
+                    login-processing-url="/login"
+                authentication-failure-url="/?error=1"/>
+        <remember-me key="remember"/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <password-encoder hash="md5"/>
+            <user-service>
+                <!-- pass: sumdu-radio -->
+                <user name="admin"
+                      password="c8edd86e2baaac9bdd1f3cc5a853a09f"
+                      authorities="ROLE_USER, ROLE_ADMIN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>

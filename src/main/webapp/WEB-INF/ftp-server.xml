@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://mina.apache.org/ftpserver/spring/v1"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	   http://mina.apache.org/ftpserver/spring/v1 http://mina.apache.org/ftpserver/ftpserver-1.0.xsd
+	   ">
+
+    <beans:bean id="fileFtpletBean" class="ua.edu.sumdu.ftp.FileFtplet"/>
+
+    <server id="ftpServer">
+        <listeners>
+            <nio-listener name="default" port="2121">
+                <ssl>
+                    <keystore file="ftpserver.jks" password="password" />
+                </ssl>
+            </nio-listener>
+        </listeners>
+        <ftplets>
+            <ftplet name="ftplet">
+                <beans:ref bean="fileFtpletBean" />
+            </ftplet>
+        </ftplets>
+        <file-user-manager file="ftp-users.properties" />
+    </server>
+</beans:beans>

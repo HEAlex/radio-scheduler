@@ -1,0 +1,264 @@
+/*
+*   CSS RESET
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:extralight);
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+*  MAIN STYLE
+*/
+
+html, body {
+    height: auto !important;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font: 80% Cambria, Georgia, serif;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+#wrapper {
+    height: 100%;
+}
+
+#files-container {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 20%;
+    position: relative;
+    overflow: scroll;
+}
+
+.ui-icon-primary {
+    float: left;
+}
+
+.ui-icon-secondary {
+    float: right;
+}
+
+li.jstree-leaf.ui-draggable a ins:HOVER,
+li.jstree-leaf.ui-draggable.playing a ins{
+    background-position: -74px -37px;
+}
+
+li.jstree-leaf.ui-draggable.playing a ins:HOVER {
+    background-position: -54px -55px;
+}
+
+.file .controls {
+    top: 3px;
+}
+
+#add-button {
+    width: 97%;
+    margin-left: 2px;
+    margin-bottom: 4px;
+}
+
+.file {
+    list-style: none;
+    display: block;
+    cursor: move !important;
+    vertical-align: top;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+ins.file-icon {
+    display: inline-block;
+    text-decoration: none;
+    height: 16px !important;
+    width: 16px !important;
+    background: url(/images/tree.png) -55px -37px no-repeat;
+}
+
+.file-stripe {
+    position: absolute;
+    display: block;
+    height: 80%;
+    border: 1px dotted #000000;
+    width: 1px;
+    top: 10%;
+    left: 5px;
+}
+
+#calendar {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 80%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#days {
+    width: 100%;
+}
+
+#calendar td {
+    position: relative;
+    padding: 2px !important;
+}
+
+.day-title {
+    text-transform: uppercase;
+    text-align: center !important;
+}
+
+#calendar td.drop-hover {
+    background: #c6ff84;
+    border-color: #a6d672;
+}
+
+#calendar .icon-time {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.current-day {
+    background-color: #f5ffec;
+}
+
+.table-striped tbody tr:nth-child(odd) td.current-day,
+.table-striped tbody tr:nth-child(odd) th.current-day {
+    background-color: #e8f0e1;
+}
+
+.button.small {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#calendar ul {
+    display: block;
+    height: 100%;
+    min-height: 18px;
+    margin-left: 0;
+}
+
+#calendar li {
+    display: block;
+    position: relative;
+    min-height: 27px;
+    margin: 1px !important;
+    border-bottom: 1px solid #EDEDED;
+    padding-right: 34px;
+}
+
+#calendar li:last-child {
+    border-bottom: none;
+}
+
+#calendar li span {
+    vertical-align: top;
+}
+
+.controls {
+    display: block;
+    position: absolute;
+    top: -1px;
+    right: 3px;
+}
+
+.controls * {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    margin: 1px 1px 0;
+    cursor: pointer;
+}
+
+.controls:HOVER * {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity = 100);
+    -moz-opacity: 1.0;
+    -khtml-opacity: 1.0;
+    opacity: 1.0;
+}
+
+.time {
+    display: block;
+    position: absolute;
+    right: 7px;
+    bottom: 3px;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: bold;
+}
+
+.totalTime {
+    display: block;
+    float: right;
+    margin-right: 8px;
+}
+
+.plupload.html5 {
+    top: -100px !important;
+    left: -100px !important;
+}
+
+#weekControls {
+    height: 34px;
+    vertical-align: middle;
+}
